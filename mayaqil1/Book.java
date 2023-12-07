@@ -90,12 +90,12 @@ public class Book implements Display {
     @Override
     public String getInfo() {
         return "Book{"
-                + "title='" + title + '\''
-                + ", author=" + this .getAuther()
-                + ", no=" + no
-                + ", genre='" + genre + '\''
-                + ", version=" + vertion
-                + ", date='" + date + '\''
+                + "title='" + this.getTitle() + '\''
+                + ", author=" + this.getAuther()
+                + ", no=" + this.getNo()
+                + ", genre='" + this.getGenre() + '\''
+                + ", version=" + this.getVertion()
+                + ", date='" + this.getDate() + '\''
                 + '}';
     }
 

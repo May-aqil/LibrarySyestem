@@ -3,13 +3,12 @@ package com.mycompany.mayaqil1;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.List;
 
 public class Library {
 
-    private List<Book> books;
-    private List<Student> students;
-    private List<Loan> loans;
+    private ArrayList<Book> books;
+    private ArrayList<Student> students;
+    private ArrayList<Loan> loans;
     
     
     
@@ -40,15 +39,15 @@ public class Library {
     }
 
 //----------------------------------------------------------------------
-    public List<Book> getBooks() {
+    public ArrayList<Book> getBooks() {
         return books;
     }
 
-    public List<Student> getStudents() {
+    public ArrayList<Student> getStudents() {
         return students;
     }
 
-    public List<Loan> getLoans() {
+    public ArrayList<Loan> getLoans() {
         return loans;
     }
 //-----------------------------------------------------------------
@@ -71,8 +70,8 @@ public class Library {
         return null;
     }
 
-    public List<Book> searchBooksByAuthor(String authorName) {
-        List<Book> result = new ArrayList<>();
+    public ArrayList<Book> searchBooksByAuthor(String authorName) {
+        ArrayList<Book> result = new ArrayList<>();
         for (Book book : books) {
             if (book.getAuther().getName().equalsIgnoreCase(authorName)) {
                 result.add(book);
@@ -85,8 +84,8 @@ public class Library {
         return !book.inLoan();
     }
 
-    public List<Book> getBorrowedBooks() {
-        List<Book> borrowedBooks = new ArrayList<>();
+    public ArrayList<Book> getBorrowedBooks() {
+        ArrayList<Book> borrowedBooks = new ArrayList<>();
         for (Book book : books) {
             if (book.inLoan()) {
                 borrowedBooks.add(book);
@@ -96,23 +95,18 @@ public class Library {
     }
 
      public void borrowBook(Student student, Book book) {
-        // Check if the student has reached the maximum number of allowed loans
         if (student.getLoan().size() >= MAX_LOANS) {
             System.out.println("Student has reached the maximum number of allowed loans.");
             return;
         }
 
-        // Calculate the due date (5 days from the current date)
         LocalDate dueDate = LocalDate.now().plusDays(DAYS_ALLOWED);
 
-        // Create a new loan
        Loan loan = new Loan(student, book, dueDate);
 
-        // Add the loan to the student and the library
         student.addLoan(loan);
         loans.add(loan);
 
-        // Output a success message
         System.out.println("Book '" + book.getTitle() + "' borrowed by " + student.getName() +
                 ". Due date: " + loan.getDueDate());
     }

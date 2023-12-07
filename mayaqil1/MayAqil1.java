@@ -17,7 +17,7 @@ public class MayAqil1 {
         library = new Library();
         int n;
         //  Adding books to the library
-        for (int i = 1; i <= 2; i++) {
+        for (int i = 1; i <= 4; i++) {
             System.out.println("Enter details for Book " + i + ":");
             System.out.print("Title: ");
             String title = scanner.nextLine();
@@ -70,6 +70,7 @@ public class MayAqil1 {
             System.out.println("3. Return a Book");
             System.out.println("4. Display All Books");
             System.out.println("5. Display All Students");
+            System.out.println("6. Display All loans");
             System.out.println("0. Exit");
 
             System.out.print("Enter your choice: ");

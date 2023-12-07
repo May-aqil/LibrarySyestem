@@ -5,7 +5,6 @@
 package com.mycompany.mayaqil1;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
@@ -18,8 +17,8 @@ public class Student implements Display {
     private String address;
     private String birthDate;
     private String major;
-    private List<Book> borrowedBooks;
-     private List<Loan> loans;
+    private ArrayList<Book> borrowedBooks;
+     private ArrayList<Loan> loans;
 
     public Student() {
     }
@@ -89,7 +88,7 @@ public class Student implements Display {
         borrowedBooks.remove(book);
     }
 
-    public List<Book> getBorrowedBooks() {
+    public ArrayList<Book> getBorrowedBooks() {
         return borrowedBooks;
     }
 
@@ -101,9 +100,10 @@ public class Student implements Display {
     public void addLoan(Loan loan) {
         loans.add(loan);
     }
-     public List<Loan> getLoan() {
+     public ArrayList<Loan> getLoan() {
         return loans;
     }
+     
     
     
     
